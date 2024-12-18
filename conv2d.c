@@ -7,7 +7,7 @@ void conv2d(image_t image[IMAGE_ROWS][IMAGE_COLS], kernel_t kernel[KERNEL_ROWS][
 
 	#pragma HLS ARRAY_PARTITION variable=lineBuffer complete dim=1
 
-	LOOP_BUFFER:
+	INITIATE_BUFFER:
 	for (i = 0; i < LINEBUFFER_ROWS; i++) {
 		for (int j = 0; j < IMAGE_COLS; j++) {
 			lineBuffer[i][j] = image[i][j];
